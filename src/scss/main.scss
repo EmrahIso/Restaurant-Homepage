@@ -1,0 +1,12 @@
+@use "utilities";
+@use "base";
+@use "layout";
+@use "components";
+
+$background-color: purple;
+
+body {
+    background-color: $background-color;
+    color: white;
+}
+

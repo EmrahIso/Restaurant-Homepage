@@ -1,0 +1,39 @@
+@use "../utilities" as *;
+@use "../utilities/variables" as *;
+@use "../utilities/colors" as *;
+@use "../utilities/type-scale" as *;
+
+:root {
+    // Fonts
+    & {
+        @each $font, $name in $fonts {
+            --font-#{$font}: #{$name};
+        }
+    }
+
+    // Type-scale
+    
+    @each $screen-size, $font-size in $type-scale {
+        & {
+            @if $screen-size != medium {
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            } @else {
+                @include respond-to(medium) {
+                    @each $size, $value in $font-size {
+                        --fs-#{$size}: #{$value};
+                    }
+                }
+            }
+        }
+    }
+    
+
+    // Shadows
+    & {
+        @each $name, $value in $shadows {
+            --shw-#{$name}: #{$value};
+        }
+    }
+}

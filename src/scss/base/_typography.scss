@@ -26,9 +26,29 @@ body {
 
 @font-face {
     font-family: 'montserrat-bold';
-    src: url('../../assets/fonts/montserrat-bold-webfont.woff2') format('woff2'),
-         url('../../assets/fonts/montserrat-bold-webfont.woff') format('woff');
+    src: url('../../assets/fonts/montserrat-medium-webfont.woff2') format('woff2'),
+         url('../../assets/fonts/montserrat-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
+
+// Styles
+
+.main-heading,
+.secondary-heading {
+    line-height: 1.4;
+}
+
+.main-heading {
+    color: var(--clr-brn-200);
+    font-size: var(--fs-400);
+}
+
+.secondary-heading {
+    color: var(--clr-neutral-100);
+    letter-spacing: 1px;
+    font-size: var(--fs-500);
+    font-family: var(--font-bold);
+    margin-bottom: toRem(32);
 }

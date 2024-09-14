@@ -1,0 +1,77 @@
+@use "../utilities" as *;
+
+.header {
+    position: relative;
+    padding: toRem(32) 0 toRem(32) 0;
+    background-color: transparent;
+    background-image: linear-gradient(var(--clr-ble-309), var(--clr-ble-309)), url("../../assets/images/hero-background.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    height: max(toRem(680), 70vh);
+    height: max(toRem(680), 70dvh);
+    box-shadow: var(--shw-dark-bottom);
+
+    &__content-box {
+        margin-top: toRem(120);
+        padding: 0  toRem(16);
+        display: flex;
+        gap: toRem(100);
+        align-items: center;
+
+        & > div:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__info {
+        background-color: var(--clr-neutral-105);
+        border-radius: toRem(2);
+        filter: blur(.5px) opacity(.9);
+        height: toRem(300);
+        width: toRem(300);
+
+        & > div { 
+            position: absolute;
+            height: 100%;
+            width: 150%;
+            top: 100%;
+            left: 100%;
+            transform: translate(-35%, -60%);
+            background-color: var(--clr-neutral-105);
+            border-radius: toRem(2);
+            z-index: 19;
+
+            &::after {
+                content: "";
+                height: 95%;
+                width: 96.25%;
+                background-image: linear-gradient(var(--clr-neutral-5005), var(--clr-neutral-5005)), url("../../assets/images/hero-food-2.jpg");  
+                background-size: cover;
+                background-position: center bottom;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border-radius: 2px;
+                transform: translate(-50%, -50%);
+                box-shadow: var(--shw-light-bottom);
+            }
+        }
+
+        &::after {
+            content: '';
+            height: 95%;
+            width: 95%;
+            position: absolute;
+            top: 50%;
+            left: 2.5%;
+            border-radius: 2px;
+            transform: translate(0, -50%);
+            background-image: linear-gradient(var(--clr-neutral-5015), var(--clr-neutral-5015)), url("../../assets/images/hero-food.jpg");
+            background-size: cover;
+            background-position: center bottom;
+            box-shadow: var(--shw-light-bottom);
+        }
+    }
+}

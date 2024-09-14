@@ -1,0 +1,38 @@
+@use "../utilities" as *;
+
+.footer {
+    background-color: var(--clr-ble-300);
+
+    &__layout-up {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: toRem(16) toRem(16) 0 toRem(16);
+        border-bottom: 1px solid var(--clr-neutral-1075);
+    }
+
+    &__layout-down {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: toRem(48) toRem(16) toRem(96) toRem(16);
+    }
+
+    &__info-list {
+        display: flex;
+        list-style: none;
+        gap: toRem(33);
+    }
+
+    &__info-link:link,
+    &__info-link:visited {
+        text-decoration: none;
+        transition: color .15s;
+        color: var(--clr-neutral-400);
+    }
+
+    &__info-link:hover,
+    &__info-link:active {
+        color: var(--clr-neutral-300);
+    }
+}

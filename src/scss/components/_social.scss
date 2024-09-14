@@ -1,0 +1,29 @@
+@use "../utilities" as *;
+
+.social {
+    &__list {
+        list-style: none;
+        display: flex;
+        gap: toRem(24);
+    }
+
+    &__link:link,
+    &__link:visited {
+        display: inline-block;
+        text-decoration: none;
+        background-color: transparent;
+        transition: background-color .3s;
+        padding: toRem(6);
+    }
+
+    &__link:hover,
+    &__link:active {
+        background-color: var(--clr-neutral-1075);
+    }
+
+    &__link-icon {
+        height: 28px;
+        width: 28px;
+        fill: var(--clr-neutral-300);
+    }
+}

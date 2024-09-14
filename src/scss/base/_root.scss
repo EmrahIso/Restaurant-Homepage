@@ -11,6 +11,15 @@
         }
     }
 
+    // Colors
+    & { 
+        @each $color, $shades  in $colors {
+            @each $shade, $value in $shades {
+                --clr-#{$color}-#{$shade}: #{$value};
+            }
+        }
+    } 
+
     // Type-scale
     
     @each $screen-size, $font-size in $type-scale {

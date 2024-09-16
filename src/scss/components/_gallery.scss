@@ -1,0 +1,66 @@
+@use "../utilities" as *;
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(toRem(256), 1fr));
+    gap: toRem(16);
+
+    &__item  {
+        height: toRem(256);
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__item--1 {
+        background-image: url("../../assets/images/hero-food-2.jpg");
+    }
+
+    &__item--2 {
+        background-image: url("../../assets/images/hero-food.jpg");
+        background-position: bottom center;
+    }
+    
+    &__item--3 {
+        background-image: url("../../assets/images/meal-1.jpg");
+    }
+
+    &__item--4 {
+        background-image: url("../../assets/images/meal-2.jpg");
+    }
+
+    &__item--5 {
+        background-image: url("../../assets/images/meal-3.jpg");
+    }
+
+    &__item--6 {
+        background-image: url("../../assets/images/reservation.jpg");
+    }
+
+    &__item--7 {
+        background-image: url("../../assets/images/meal-4.jpg");
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    &__item--8 {
+        background-image: url("../../assets/images/meal-5.jpg");
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    &__item--9 {
+        background-image: url("../../assets/images/hero-background.jpg");
+    }
+
+    &__item--10 {
+        background-image: url("../../assets/images/meal-6.jpg");
+    }
+
+    &__item--11 {
+        background-image: url("../../assets/images/meal-7.jpg");
+    }
+
+    &__item--12 {
+        background-image: url("../../assets/images/meal-8.jpg");
+    }
+}

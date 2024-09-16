@@ -1,5 +1,9 @@
 @use "../utilities" as *;
 
+body {
+    background-color: var(--clr-neutral-100);
+}
+
 .container {
     max-width: toRem(1170);
     margin: 0 auto;

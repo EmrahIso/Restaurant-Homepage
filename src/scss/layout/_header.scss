@@ -7,9 +7,8 @@
     background-image: linear-gradient(var(--clr-ble-309), var(--clr-ble-309)), url("../../assets/images/hero-background.jpg");
     background-size: cover;
     background-position: bottom center;
-    height: max(toRem(680), 70vh);
-    height: max(toRem(680), 70dvh);
-    box-shadow: var(--shw-dark-bottom);
+    height: toRem(680);
+    //box-shadow: var(--shw-dark-bottom);
 
     &__content-box {
         margin-top: toRem(120);
@@ -45,8 +44,8 @@
 
             &::after {
                 content: "";
-                height: 95%;
-                width: 96.25%;
+                height: toRem(285);
+                width: toRem(434);
                 background-image: linear-gradient(var(--clr-neutral-5005), var(--clr-neutral-5005)), url("../../assets/images/hero-food-2.jpg");  
                 background-size: cover;
                 background-position: center bottom;
@@ -61,8 +60,8 @@
 
         &::after {
             content: '';
-            height: 95%;
-            width: 95%;
+            height: toRem(285);
+            width:  toRem(285);
             position: absolute;
             top: 50%;
             left: 2.5%;

@@ -52,3 +52,51 @@ body {
     font-family: var(--font-bold);
     margin-bottom: toRem(32);
 }
+
+.tertiary-heading {
+    color: var(--clr-brn-400);
+    font-size: var(--fs-200);
+    text-transform: uppercase;
+    letter-spacing: .75px;
+    margin-bottom: toRem(32);
+    font-family: var(--font-light);
+    margin-left: toRem(5);
+
+    &--reservation {
+        margin-top: toRem(48);
+        color: var(--clr-brn-200);
+    }
+}
+
+.quaternary-heading {
+    font-size: var(--fs-500);
+    letter-spacing: 1.25px;
+    font-family: var(--font-regular);
+    transform: skewX(-10deg);
+    color: var(--clr-brn-600);
+    margin-bottom: toRem(32);
+
+
+    &--reservation {
+        color: var(--clr-neutral-100);
+        padding-left: toRem(7.5);
+    }
+}
+
+.main-para {
+    font-size: var(--fs-200);
+    color: var(--clr-brn-600);
+    letter-spacing: .2px;
+    transform: skewX(-7.5deg);
+    padding-left: toRem(5);
+    margin-bottom: toRem(96);
+
+    &--card {
+        color: var(--clr-neutral-400);
+        margin-bottom: toRem(16);
+    }
+
+    &--reservation {
+        color: var(--clr-neutral-300);
+    }
+}

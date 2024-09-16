@@ -4,11 +4,11 @@
     cursor: pointer;
     background-color: transparent;
     border: 0;
+    display: inline-block;
     
     &--navigation {
         font-size: var(--fs-300);
         color: var(--clr-neutral-100);
-        list-style: none;
         transition: background-color .3s;
         padding: toRem(8) toRem(16);
 
@@ -26,10 +26,29 @@
         letter-spacing: .25px;
         font-family: var(--font-bold);
         transition: background-color .2s;
+        align-self: flex-start;
 
         &:hover,
         &:active {
             background-color: var(--clr-brn-400);
+        }
+    }
+
+    &--menu {
+        text-transform: uppercase;
+        font-size: var(--fs-200);
+        letter-spacing: .25px;
+        color: var(--clr-neutral-300);
+        font-family: var(--font-bold);
+        transition: background-color .3s;
+        padding: toRem(8) toRem(16);
+        margin: toRem(8) toRem(12) 0 0;
+        align-self: flex-end;
+
+
+        &:hover,
+        &:active {
+            background-color: var(--clr-neutral-1075);
         }
     }
 }

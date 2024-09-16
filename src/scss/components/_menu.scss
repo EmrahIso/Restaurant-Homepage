@@ -1,0 +1,65 @@
+@use "../utilities" as *;
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__card {
+        height: toRem(460);
+        min-width: toRem(300);
+        position: relative;
+
+        flex: 1;
+        overflow: hidden;
+
+        &:hover &-background,
+        &:active &-background {
+            transform: scale(1.25);
+        }
+
+        &-background {
+            height: 100%;
+            width: 100%;
+            background-position: center center;
+            background-size: cover;
+            transition: all .45s;
+
+            &--1 {
+                background-image: linear-gradient(var(--clr-neutral-5005), var(--clr-neutral-605)), url("../../assets/images/meal-1.jpg");
+            }
+    
+            &--2 {
+                background-image: linear-gradient(var(--clr-neutral-5005), var(--clr-neutral-605)), url("../../assets/images/meal-2.jpg");
+            }
+    
+            &--3 {
+                background-image: linear-gradient(var(--clr-neutral-5005), var(--clr-neutral-605)), url("../../assets/images/meal-3.jpg");
+            }
+        }
+
+        &-info {
+            position: absolute;
+            bottom: toRem(8);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-info > div {
+            display: flex;
+            flex-direction: column;
+            margin: 0 toRem(24);
+            border-bottom: 1px solid var(--clr-neutral-1075);
+            gap: toRem(6);
+        }
+
+        &-heading {
+            font-family: var(--font-bold);
+            font-size: var(--fs-300);
+            color: var(--clr-neutral-300);
+            padding-left: toRem(3);
+            letter-spacing: -0.25px;
+            font-weight: 700;
+        }
+    }
+}

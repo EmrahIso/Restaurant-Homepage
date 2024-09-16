@@ -3,10 +3,6 @@
 .section-home {
     background-color: var(--clr-neutral-100);
 
-    article {
-        padding: toRem(96) toRem(16);
-    }
-
     .article-reservation {
         margin-top: toRem(48);
         background-image: linear-gradient(var(--clr-neutral-6065), var(--clr-neutral-6065)), url("../../assets/images/reservation.jpg");

@@ -1,0 +1,29 @@
+@use "../utilities" as *;
+
+.section-about {
+    background-color: var(--clr-neutral-300);
+
+    article {
+        padding: toRem(96) toRem(16);
+    }
+
+    .article-gallery {
+        background-color: var(--clr-neutral-100);
+    }
+
+    .article-about-wrapper {
+        margin-top: toRem(32);
+        display: grid;
+        grid-template-columns: 1fr toRem(320);
+        align-items: center;
+        gap: toRem(64);
+    }
+
+    .article-about-team-img-cont {
+        height: toRem(320);
+        border-radius: 50%;
+        background-image: url("../../assets/images/team.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}

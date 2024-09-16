@@ -4,6 +4,10 @@ body {
     background-color: var(--clr-neutral-100);
 }
 
+article {
+    padding: toRem(96) toRem(16);
+}
+
 .container {
     max-width: toRem(1170);
     margin: 0 auto;
@@ -11,4 +15,8 @@ body {
 
 .copyright {
     color: var(--clr-neutral-400);
+}
+
+strong {
+    color: var(--clr-brn-400);
 }

@@ -1,0 +1,9 @@
+@use "../utilities" as *;
+
+.section-menu {
+    background-color: var(--clr-neutral-100);
+
+    article {
+        padding: toRem(96) toRem(16);
+    }
+}

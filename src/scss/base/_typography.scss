@@ -79,11 +79,16 @@ body {
 
     &--reservation {
         color: var(--clr-neutral-100);
-        padding-left: toRem(7.5);
+        padding-left: toRem(5);
     }
 }
 
-.main-para {
+.para {
+    font-family: var(--font-light);
+    margin-bottom: toRem(12);
+}
+
+.ita-para {
     font-size: var(--fs-200);
     color: var(--clr-brn-600);
     letter-spacing: .2px;

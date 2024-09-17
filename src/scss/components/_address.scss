@@ -1,0 +1,17 @@
+@use "../utilities" as *;
+
+.address {
+    &__info-box {
+        display: flex;
+        gap: toRem(16);
+        align-items: center;
+        margin-bottom: toRem(16);
+        margin-left: toRem(8);
+    }
+
+    &__icon {
+        height: 24px;
+        width: 24px;
+        fill: var(--clr-brn-200);
+    }
+}

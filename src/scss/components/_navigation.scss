@@ -14,13 +14,9 @@
         width: 100vw;
         width: 100dvw;
         padding-top: toRem(16);
-        background-color: var(--clr-brn-300);
+        background-color: var(--clr-ble-300);
         box-shadow: var(--shw-light-bottom);
         z-index: 99;
-
-        & .main-heading {
-            color: var(--clr-neutral-300);
-        }
     }
 
     &--footer {

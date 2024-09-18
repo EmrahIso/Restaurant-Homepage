@@ -8,7 +8,6 @@
     background-size: cover;
     background-position: bottom center;
     height: toRem(680);
-    //box-shadow: var(--shw-dark-bottom);
 
     &__content-box {
         margin-top: toRem(120);
@@ -73,4 +72,8 @@
             box-shadow: var(--shw-light-bottom);
         }
     }
+}
+
+.navigation--fixed + .header__content-box {
+    margin-top: toRem(177);
 }

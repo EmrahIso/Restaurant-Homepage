@@ -1,8 +1,7 @@
-
 export function initialPageLoad() {
     const bodyEl = document.querySelector("body");
 
-    // HEADER
+    // Initializing header
 
     const headerInitialization = () => {
         const headerEl = document.createElement("header");
@@ -63,6 +62,16 @@ export function initialPageLoad() {
 
         bodyEl.appendChild(headerEl);
     }
+
+    headerInitialization();
+
+    // Add #content div to bodyEl
+
+    const contentEl = document.createElement("div");
+    contentEl.id = "content";
+    bodyEl.appendChild(contentEl);
+
+    // Initializing footer
 
     const footerInitialization = () => {
         const footerEl = document.createElement("footer");
@@ -160,7 +169,6 @@ export function initialPageLoad() {
         bodyEl.appendChild(footerEl);
     }
 
-    headerInitialization();
     footerInitialization();
     
     ///

@@ -1,5 +1,6 @@
-import "../scss/main.scss";
 import { initialPageLoad } from "./initialPageLoad";
+import "../scss/main.scss";
+
 
 window.addEventListener("load", initialPageLoad);
 

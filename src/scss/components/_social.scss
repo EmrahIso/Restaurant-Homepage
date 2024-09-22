@@ -1,10 +1,18 @@
 @use "../utilities" as *;
 
 .social {
+    @include respond-to(extra-small) {
+        margin-top: toRem(16);
+    }
+    
     &__list {
         list-style: none;
         display: flex;
         gap: toRem(24);
+
+        @include respond-to(large) {
+            gap: toRem(12);
+        }
     }
 
     &__link:link,

@@ -12,6 +12,11 @@
         flex: 1;
         overflow: hidden;
 
+        @include respond-to(extra-small) {
+            height: toRem(320);
+            min-width: toRem(200);
+        }
+
         &:hover &-background,
         &:active &-background {
             transform: scale(1.25);

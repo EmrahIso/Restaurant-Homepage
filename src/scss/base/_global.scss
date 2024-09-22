@@ -6,6 +6,14 @@ body {
 
 article {
     padding: toRem(96) toRem(16);
+
+    @include respond-to(small) {
+        padding: toRem(64) toRem(16);
+    }
+
+    @include respond-to(extra-small) {
+        padding: toRem(48) toRem(16);
+    }
 }
 
 .container {
@@ -15,6 +23,11 @@ article {
 
 .copyright {
     color: var(--clr-neutral-400);
+
+    @include respond-to(medium) {
+        order: 2;
+        font-size: var(--fs-200);
+    }
 }
 
 strong {

@@ -8,13 +8,31 @@
         background-image: linear-gradient(var(--clr-neutral-6065), var(--clr-neutral-6065)), url("../../assets/images/reservation.jpg");
         background-position: center 75%;
         background-size: cover;
-        height: 600px;
+        height: toRem(600);
+
+        @include respond-to(medium) {
+            height: toRem(450);
+        }
+
+        @include respond-to(small) {
+            height: toRem(480);
+        }
 
         &-wrapper {
             width: 50%;
             margin-left: 50%;
             display: flex;
             flex-direction: column;
+
+            @include respond-to(extra-large) {
+                width: 75%;
+                margin-left: 5%;
+            }
+
+            @include respond-to(large) {
+                width: 100%;
+                margin-left: 0;
+            }
 
             button {
                 margin-left: toRem(6);
@@ -25,5 +43,9 @@
     .article-gallery {
         background-color: var(--clr-neutral-300);
         padding: toRem(96) toRem(16) toRem(48) toRem(16);
+
+        @include respond-to(extra-small) {
+            padding: toRem(48) toRem(16) toRem(48) toRem(16);
+        }
     }
 }

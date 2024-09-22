@@ -43,6 +43,20 @@ body {
 .main-heading {
     color: var(--clr-brn-200);
     font-size: var(--fs-400);
+
+    &--logo {
+        @include respond-to(medium) {
+            padding-left: toRem(16);
+        }
+    
+        @include respond-to(small) {
+            padding-left: toRem(12);
+        }
+
+        @include respond-to(extra-small) {
+            padding-left: toRem(0);
+        }
+    }
 }
 
 .secondary-heading {
@@ -51,6 +65,14 @@ body {
     font-size: var(--fs-500);
     font-family: var(--font-bold);
     margin-bottom: toRem(32);
+
+    @include respond-to(small) {
+        font-size: var(--fs-400);
+    }
+
+    @include respond-to(extra-small) {
+        margin-bottom: toRem(48);
+    }
 }
 
 .tertiary-heading {
@@ -65,6 +87,10 @@ body {
     &--reservation {
         margin-top: toRem(48);
         color: var(--clr-brn-200);
+
+        @include respond-to(medium) {
+            margin-top: toRem(0);
+        }
     }
 }
 
@@ -81,6 +107,14 @@ body {
         color: var(--clr-neutral-100);
         padding-left: toRem(5);
     }
+
+    @include respond-to(medium) {
+        font-size: var(--fs-400);
+    }
+
+    @include respond-to(small) {
+        transform: skewX(0);
+    }
 }
 
 .para {
@@ -95,6 +129,14 @@ body {
     transform: skewX(-7.5deg);
     padding-left: toRem(5);
     margin-bottom: toRem(96);
+
+    @include respond-to(medium) {
+        margin-bottom: toRem(48);
+    }
+
+    @include respond-to(small) {
+        transform: skewX(0);
+    }
 
     &--card {
         color: var(--clr-neutral-400);

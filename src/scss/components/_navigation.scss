@@ -6,6 +6,10 @@
     padding: 0 toRem(16) toRem(16) toRem(24);
     justify-content: space-between;
     border-bottom: 1px solid var(--clr-neutral-1075);
+    
+    @include respond-to(extra-small) {
+        padding: 0 toRem(16) toRem(16) toRem(16);
+    }
 
     &--fixed {
         position: fixed;
@@ -19,9 +23,29 @@
         z-index: 99;
     }
 
+    &--header {
+        @include respond-to(medium) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: toRem(24);
+        }
+
+        @include respond-to(small) {
+            gap: toRem(16);
+        }
+
+        @include respond-to(extra-small) {
+            flex-direction: row;
+        }
+    }
+
     &--footer {
         padding: toRem(32) 0;
         border-bottom: 0;
+
+        @include respond-to(extra-small) {
+            display: none;
+        }
     }
 
     &__list {
@@ -29,8 +53,20 @@
         list-style: none;
         gap: toRem(40);
 
+        @include respond-to(medium) {
+            gap: toRem(12);
+        }
+
+        @include respond-to(extra-small) {
+            display: none;
+        }
+
         &--footer {
             gap: toRem(80);
+
+            @include respond-to(large) {
+                gap: toRem(20);
+            }
         }
     }
 }

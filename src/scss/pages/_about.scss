@@ -5,6 +5,10 @@
 
     article {
         padding: toRem(96) toRem(16);
+
+        @include respond-to(extra-small) {
+            padding: toRem(48) toRem(16);
+        }
     }
 
     .article-gallery {
@@ -17,6 +21,11 @@
         grid-template-columns: 1fr toRem(320);
         align-items: center;
         gap: toRem(64);
+
+        @include respond-to(large) {
+            grid-template-columns: 1fr;
+            margin-top: toRem(64);
+        }
     }
 
     .article-about-team-img-cont {
@@ -25,5 +34,16 @@
         background-image: url("../../assets/images/team.jpg");
         background-position: center;
         background-size: cover;
+
+        @include respond-to(large) {
+            width: toRem(320);
+            justify-self: center;
+            grid-row: 1;
+        }
+
+        @include respond-to(extra-small) {
+            width: toRem(240);
+            height: toRem(240);
+        }
     }
 }

@@ -16,6 +16,53 @@
         &:active {
             background-color: var(--clr-neutral-1075);
         }
+        
+        @include respond-to(small) {
+            padding: toRem(6) toRem(12);
+        }
+    }
+
+    &--open-navigation {
+        display: none;
+
+        @include respond-to(extra-small) {
+            display: inline-block;
+            height: toRem(32);
+            width: toRem(32);
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: var(--clr-brn-300);
+                transition: transform .3s;
+            }
+
+            &::before {
+                top: 50%;
+                left: 0;
+                transform: translateY(-5px);
+            }
+
+            &::after {
+                top: 50%;
+                left: 0;
+                transform: translateY(5px);
+            }
+
+            &.opened {
+                &::before {
+                    transform: translateY(0) rotate(45deg);
+                }
+    
+                &::after {
+                    transform: translateY(0) rotate(-45deg);
+                }
+            }
+        }
     }
 
     &--cta {

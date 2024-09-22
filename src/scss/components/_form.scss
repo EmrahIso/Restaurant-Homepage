@@ -5,6 +5,10 @@
     margin-top: toRem(80);
     padding-left: toRem(10);
 
+    @include respond-to(medium) {
+        padding-left: 0;
+    }
+
     &__label {
         padding: 0;
         color: var(--clr-neutral-400);

@@ -1,5 +1,7 @@
 export function initializeContactTab() {
     const contentEl = document.querySelector("#content");
+    contentEl.querySelectorAll("*").forEach(n => n.remove());
+    window.scrollTo(0, 0);
 
     const sectionEl = document.createElement("section");
     sectionEl.classList.add("section-contact");
@@ -134,4 +136,8 @@ export function initializeContactTab() {
     }
 
     initializeContactArticle();
+
+    const dialogNavigationEl = document.querySelector(".header .dialog");
+    document.body.style.overflowY = "auto";
+    dialogNavigationEl.close();
 }

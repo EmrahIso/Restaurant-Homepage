@@ -1,9 +1,11 @@
 export function initializeAboutTab() {
     const contentEl = document.querySelector("#content");
+    contentEl.querySelectorAll("*").forEach(n => n.remove());
+    window.scrollTo(0, 0);
 
     const sectionEl = document.createElement("section");
     sectionEl.classList.add("section-about");
-    contentEl.appendChild(sectionEl);
+    contentEl.appendChild(sectionEl); 
 
     const initializeAboutArticle = () => {
         const articleEl = document.createElement("article");
@@ -90,4 +92,7 @@ export function initializeAboutTab() {
 
     initializeGalleryArticle();
 
+    const dialogNavigationEl = document.querySelector(".header .dialog");
+    document.body.style.overflowY = "auto";
+    dialogNavigationEl.close();
 }

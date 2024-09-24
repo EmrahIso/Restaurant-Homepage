@@ -1,5 +1,7 @@
 export function initializeHomeTab() {
     const contentEl = document.querySelector("#content");
+    contentEl.querySelectorAll("*").forEach(n => n.remove());
+    window.scrollTo(0, 0);
 
     const sectionEl = document.createElement("section");
     sectionEl.classList.add("section-home");
@@ -63,7 +65,7 @@ export function initializeHomeTab() {
 
             const buttonMenuEl = document.createElement("button");
             buttonMenuEl.type = "button";
-            buttonMenuEl.classList.add("button", "button--menu");
+            buttonMenuEl.classList.add("button", "button--menu", "button-menu");
             buttonMenuEl.textContent = "See menu";
             menuCardInfoEl.appendChild(buttonMenuEl);
         }
@@ -102,7 +104,7 @@ export function initializeHomeTab() {
         const buttonCtaEl = document.createElement("button");
         buttonCtaEl.type = "button";
         buttonCtaEl.textContent = "Contact Us";
-        buttonCtaEl.classList.add("button", "button--cta");
+        buttonCtaEl.classList.add("button", "button--cta", "button-contact");
         articleReservationWrapper.appendChild(buttonCtaEl);
     }
 
@@ -145,5 +147,7 @@ export function initializeHomeTab() {
 
     initializeGalleryArticle();
 
-    console.log("initial home");
+    const dialogNavigationEl = document.querySelector(".header .dialog");
+    document.body.style.overflowY = "auto";
+    dialogNavigationEl.close();
 }

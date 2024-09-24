@@ -1,5 +1,7 @@
 export function initializeMenuTab() {
     const contentEl = document.querySelector("#content");
+    contentEl.querySelectorAll("*").forEach(n => n.remove());
+    window.scrollTo(0, 0);
 
     const sectionEl = document.createElement("section");
     sectionEl.classList.add("section-menu");
@@ -71,5 +73,7 @@ export function initializeMenuTab() {
 
     initializeMenuArticle();
 
-    console.log("menu");
+    const dialogNavigationEl = document.querySelector(".header .dialog");
+    document.body.style.overflowY = "auto";
+    dialogNavigationEl.close();
 }

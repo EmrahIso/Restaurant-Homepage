@@ -1,3 +1,5 @@
+import { initializeHomeTab } from "./home";
+
 export function initialPageLoad() {
     const bodyEl = document.querySelector("body");
 
@@ -6,6 +8,7 @@ export function initialPageLoad() {
     const headerInitialization = () => {
         const headerEl = document.createElement("header");
         headerEl.classList.add("header");
+        bodyEl.appendChild(headerEl);
 
         const containerEl = document.createElement("div");
         containerEl.classList.add("container");
@@ -16,7 +19,7 @@ export function initialPageLoad() {
         containerEl.appendChild(navigationEl);
 
         const mainHeading = document.createElement("h1");
-        mainHeading.classList.add("main-heading");
+        mainHeading.classList.add("main-heading", "main-heading--logo");
         mainHeading.textContent = "bistro piquant";
         navigationEl.appendChild(mainHeading);
 
@@ -37,6 +40,44 @@ export function initialPageLoad() {
             navigationListItemEl.appendChild(navigationButtonEl);
         });
 
+        const navigationButtonEl = document.createElement("button");
+        navigationButtonEl.classList.add("button", "button--open-navigation");
+        navigationEl.appendChild(navigationButtonEl);
+        
+        const mobileNavigationDialogEl = document.createElement("dialog");
+        mobileNavigationDialogEl.classList.add("dialog", "navigation--dialog");
+        mobileNavigationDialogEl.dataset.modal = "";
+        containerEl.appendChild(mobileNavigationDialogEl);
+
+        const mobileNavigationDialogBackgroundEl = document.createElement("div");
+        containerEl.appendChild(mobileNavigationDialogBackgroundEl);
+
+        const mobileNavigationButtonEl = document.createElement("button");
+        mobileNavigationButtonEl.classList.add("button", "button--open-navigation", "button--open-navigation-mobile");
+        mobileNavigationButtonEl.setAttribute("autofocus", "");
+        mobileNavigationDialogEl.appendChild(mobileNavigationButtonEl);
+
+        const mobileNavigationEl = document.createElement("nav");
+        mobileNavigationEl.classList.add("navigation", "navigation--mobile");
+        mobileNavigationDialogEl.appendChild(mobileNavigationEl);
+
+        const mobileNavigationListEl = document.createElement("ul");
+        mobileNavigationListEl.classList.add("navigation__list", "navigation__list--mobile");
+        mobileNavigationEl.appendChild(mobileNavigationListEl);
+
+        const mobileNavigationButtonsContent = ["Home", "About", "Menu", "Contact"];
+
+        mobileNavigationButtonsContent.forEach(item => {
+            const mobileNavigationListItemEl = document.createElement("li");
+            mobileNavigationListEl.appendChild(mobileNavigationListItemEl);
+
+            const mobileNavigationButtonEl = document.createElement("button");
+            mobileNavigationButtonEl.classList.add("button", "button--navigation");
+            mobileNavigationButtonEl.setAttribute("type", "button");
+            mobileNavigationButtonEl.textContent = item;
+            mobileNavigationListItemEl.appendChild(mobileNavigationButtonEl);
+        });
+
         const headerContentBoxEl = document.createElement("div");
         headerContentBoxEl.classList.add("header__content-box");
         containerEl.appendChild(headerContentBoxEl);
@@ -51,16 +92,13 @@ export function initialPageLoad() {
 
         const headerButtonEl = document.createElement("button");
         headerButtonEl.textContent = "See Menu";
-        headerButtonEl.classList.add("button", "button--cta");
+        headerButtonEl.classList.add("button", "button--cta", "button-menu");
         wrapperDivEl.appendChild(headerButtonEl);
 
         const headerInfoEl = document.createElement("div");
         headerInfoEl.classList.add("header__info");
         headerContentBoxEl.appendChild(headerInfoEl);
         headerInfoEl.appendChild(document.createElement("div"));
-
-
-        bodyEl.appendChild(headerEl);
     }
 
     headerInitialization();
@@ -71,11 +109,16 @@ export function initialPageLoad() {
     contentEl.id = "content";
     bodyEl.appendChild(contentEl);
 
+    // Initializing Home Tab
+    
+    initializeHomeTab();
+
     // Initializing footer
 
     const footerInitialization = () => {
         const footerEl = document.createElement("footer");
         footerEl.classList.add("footer");
+        bodyEl.appendChild(footerEl);
 
         const containerEl = document.createElement("div");
         containerEl.classList.add("container");
@@ -165,8 +208,6 @@ export function initialPageLoad() {
 
             footerInfoListItemEl.appendChild(footerInfoListItemLinkEl);
         });
-
-        bodyEl.appendChild(footerEl);
     }
 
     footerInitialization();

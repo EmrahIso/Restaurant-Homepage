@@ -7,12 +7,13 @@
         padding: toRem(96) toRem(16);
 
         @include respond-to(extra-small) {
-            padding: toRem(48) toRem(16);
+            padding: toRem(64) toRem(16);
         }
     }
 
     .article-gallery {
         background-color: var(--clr-neutral-100);
+        padding: toRem(96) toRem(16) toRem(48) toRem(16);
     }
 
     .article-about-wrapper {

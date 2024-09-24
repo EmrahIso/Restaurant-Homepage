@@ -24,44 +24,78 @@
 
     &--open-navigation {
         display: none;
+        height: toRem(32);
+        width: toRem(32);
+        position: relative;
 
-        @include respond-to(extra-small) {
-            display: inline-block;
-            height: toRem(32);
-            width: toRem(32);
-            position: relative;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background-color: var(--clr-brn-300);
+            transition: transform .3s;
+        }
+
+        &::before {
+            top: 50%;
+            left: 0;
+            transform: translateY(-5px);
+        }
+
+        &::after {
+            top: 50%;
+            left: 0;
+            transform: translateY(5px);
+        }
+
+        &.opened {
+            &::before {
+                transform: translateY(0) rotate(45deg);
+            }
+
+            &::after {
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+
+        &-mobile {
+            position: fixed;
+            top: toRem(16);
+            right: toRem(16);
+            transition: all .5s;
 
             &::before,
             &::after {
-                content: "";
-                position: absolute;
-                height: 2px;
-                width: 100%;
-                background-color: var(--clr-brn-300);
-                transition: transform .3s;
+                background-color: var(--clr-neutral-300);
             }
 
             &::before {
-                top: 50%;
-                left: 0;
-                transform: translateY(-5px);
+                transform: translateY(0) rotate(45deg);
             }
 
             &::after {
-                top: 50%;
-                left: 0;
-                transform: translateY(5px);
+                transform: translateY(0) rotate(-45deg);
             }
 
-            &.opened {
+            @include respond-to(extra-small) {
+                display: inline-block;
+            }
+
+            &.closed {
                 &::before {
-                    transform: translateY(0) rotate(45deg);
+                    transform: translateY(-5px);
                 }
-    
+        
                 &::after {
-                    transform: translateY(0) rotate(-45deg);
+                    transform: translateY(5px);
                 }
             }
+        }
+
+        @include respond-to(extra-small) {
+            display: inline-block;
         }
     }
 

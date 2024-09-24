@@ -45,7 +45,7 @@
         padding: toRem(96) toRem(16) toRem(48) toRem(16);
 
         @include respond-to(extra-small) {
-            padding: toRem(48) toRem(16) toRem(48) toRem(16);
+            padding: toRem(64) toRem(16) toRem(64) toRem(16);
         }
     }
 }

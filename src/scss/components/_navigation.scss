@@ -11,16 +11,15 @@
         padding: 0 toRem(16) toRem(16) toRem(16);
     }
 
-    &--fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        width: 100dvw;
-        padding-top: toRem(16);
-        background-color: var(--clr-ble-300);
-        box-shadow: var(--shw-light-bottom);
-        z-index: 99;
+    &--mobile {
+        padding: toRem(16) toRem(24) toRem(16) toRem(24);
+        border-top: 1px solid var(--clr-neutral-1075);
+        position: absolute;
+        height: fit-content;
+        top: toRem(96);
+        left: 50%;
+        transform: translate(-50%, 0);
+        margin-left: toRem(16);
     }
 
     &--header {
@@ -61,11 +60,70 @@
             display: none;
         }
 
+        &--mobile {
+            flex-direction: column;
+            align-items: center;
+            gap: toRem(40);
+
+            @include respond-to(extra-small) {
+                display: flex;
+            }
+        }
+
         &--footer {
             gap: toRem(80);
 
             @include respond-to(large) {
                 gap: toRem(20);
+            }
+        }
+    }
+
+    &--dialog {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        height: 100dvh;
+        width: 100vw;
+        width: 100dvw;
+        border: 0;
+        background-color: transparent;
+        transition: all .25s;
+
+        & + div {
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            background-color: var(--clr-brn-200);
+            top: toRem(-48);
+            right: toRem(-48);
+            z-index: 19;
+            height: toRem(64);
+            width: toRem(64);
+            border-radius: 50%;
+            transition: all .5s;
+        }
+
+        &::backdrop {
+            display: none;
+        }
+
+        &[open] {
+            pointer-events: all;
+            opacity: 1;
+            visibility: visible;
+
+            & + div {
+                pointer-events: all;
+                opacity: 1;
+                visibility: visible;
+                transform: scale(50);
             }
         }
     }

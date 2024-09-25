@@ -166,6 +166,7 @@ export function initialPageLoad() {
             const socialListItemLinkEl = document.createElement("a");
             socialListItemLinkEl.href = "#";
             socialListItemLinkEl.setAttribute("rel", "noopener noreferrer");
+            socialListItemLinkEl.setAttribute("aria-label", `Visit our ${name} profile`);
             socialListItemLinkEl.classList.add("social__link");
             socialListItemEl.appendChild(socialListItemLinkEl);
 
@@ -211,8 +212,4 @@ export function initialPageLoad() {
     }
 
     footerInitialization();
-    
-    ///
-    console.log(bodyEl);
-    console.log("page loaded");
 }

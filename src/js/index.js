@@ -1,5 +1,5 @@
-import { initialPageLoad } from "./initialPageLoad";
 import "../scss/main.scss";
+import { initialPageLoad } from "./initialPageLoad";
 import { initializeHomeTab } from "./home";
 import { initializeAboutTab } from "./about";
 import { initializeMenuTab } from "./menu";
@@ -7,6 +7,7 @@ import { initializeContactTab } from "./contact";
 
 // Initial page load function invocation
 initialPageLoad();
+
 
 // switching tabs by clicking buttons in navigation
 
@@ -48,11 +49,9 @@ function specificTabSwitchClickEventHandler(e) {
     const eventTargetClassList = eventTargetClassListArray[eventTargetClassListArray.length - 1];
     switch(eventTargetClassList) {
         case "button-menu":
-            console.log('d', eventTargetClassList);
             initializeMenuTab();
         break;
         case "button-contact":
-            console.log('d', eventTargetClassList);
             initializeContactTab();
         break; 
     }
